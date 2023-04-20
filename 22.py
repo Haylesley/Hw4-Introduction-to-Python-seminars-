@@ -12,23 +12,25 @@
 n = int(input('Введите кол-во элементов первого множества: '))
 m = int(input('Введите кол-во элементов второго множества: '))
 
-first = []
+first = set()
 for i in range(n):
-    first.append(int(input("Введите элемент первого множества: ")))
-second = []
+    first.add(int(input("Введите элемент первого множества: ")))
+second = set()
 for i in range(m):
-    second.append(int(input("Введите элемент второго множества: ")))
-result = []
+    second.add(int(input("Введите элемент второго множества: ")))
+result = first & second
 
-for i in first:
-    for j in second:
-        if i == j:
-            result.append(i)
-
-newResult = set(result)
-newResult = list(newResult)
+newResult = list(result)
 newResult.sort()
 
+# for i in first:
+#     for j in second:
+#         if i == j:
+#             result.append(i)
 
-print(newResult)
+# newResult = set(result)
+# newResult = list(newResult)
+# newResult.sort()
+
+print(*newResult)
 
